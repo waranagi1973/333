@@ -1,8 +1,12 @@
 basic.forever(function () {
-    led.plotBarGraph(
-    input.soundLevel(),
-    255
-    )
+    if (!(input.buttonIsPressed(Button.A))) {
+        led.plotBarGraph(
+        input.soundLevel(),
+        255
+        )
+    } else {
+        basic.showString("now vertion:1.0.1")
+    }
 })
 basic.forever(function () {
     music.setVolume(input.soundLevel())
