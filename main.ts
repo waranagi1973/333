@@ -5,9 +5,9 @@ basic.forever(function () {
     )
 })
 basic.forever(function () {
-    music.setTempo(input.soundLevel())
-    music.ringTone(input.soundLevel())
+    music.setVolume(input.soundLevel())
 })
 basic.forever(function () {
-    music.setVolume(input.soundLevel())
+    music.setTempo(input.soundLevel())
+    music.ringTone(input.soundLevel())
 })
