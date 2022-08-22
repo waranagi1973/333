@@ -1,23 +1,8 @@
 basic.forever(function () {
-    if (!(input.buttonIsPressed(Button.B))) {
-        led.plotBarGraph(
-        input.soundLevel(),
-        255
-        )
-    } else {
-        basic.showString("HOUGAKU")
-        basic.showString("" + (input.compassHeading()))
-    }
+	
 })
 basic.forever(function () {
-    if (!(input.buttonIsPressed(Button.A))) {
-        led.plotBarGraph(
-        input.soundLevel(),
-        255
-        )
-    } else {
-        basic.showString("now vertion:1.0.1")
-    }
+	
 })
 basic.forever(function () {
     music.setVolume(input.soundLevel())
@@ -27,13 +12,18 @@ basic.forever(function () {
     music.ringTone(input.soundLevel())
 })
 basic.forever(function () {
-    if (!(input.buttonIsPressed(Button.AB))) {
+    if (input.buttonIsPressed(Button.A)) {
+        basic.showString("    ONDO")
+        basic.showString("" + (input.temperature()))
+    } else if (input.buttonIsPressed(Button.B)) {
+        basic.showString("    HOUGAKU")
+        basic.showString("" + (input.compassHeading()))
+    } else if (input.buttonIsPressed(Button.AB)) {
+        basic.showString("    Now Vertion:1.0.1")
+    } else {
         led.plotBarGraph(
         input.soundLevel(),
         255
         )
-    } else {
-        basic.showString("温度")
-        basic.showString("HOUGAKU")
     }
 })
