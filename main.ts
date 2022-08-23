@@ -1,15 +1,13 @@
-basic.forever(function () {
+bluetooth.onUartDataReceived(serial.delimiters(Delimiters.NewLine), function () {
 	
 })
-basic.forever(function () {
-	
-})
-basic.forever(function () {
-    music.setVolume(input.soundLevel())
-})
+music.setBuiltInSpeakerEnabled(true)
 basic.forever(function () {
     music.setTempo(input.soundLevel())
     music.ringTone(input.soundLevel())
+})
+basic.forever(function () {
+    music.setVolume(input.soundLevel())
 })
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
@@ -18,7 +16,7 @@ basic.forever(function () {
     } else if (input.buttonIsPressed(Button.B)) {
         basic.showString("    HOUGAKU")
         basic.showString("" + (input.compassHeading()))
-    } else if (input.buttonIsPressed(Button.AB)) {
+    } else if (input.logoIsPressed()) {
         basic.showString("    Now Vertion:1.0.1")
     } else {
         led.plotBarGraph(
