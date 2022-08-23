@@ -1,9 +1,9 @@
-input.onGesture(Gesture.Shake, function () {
-    歩数計 += 1
-    歩数計2 += 1
-})
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 	
+})
+input.onGesture(Gesture.FreeFall, function () {
+    歩数計 += 1
+    歩数計2 += 1
 })
 let 獲得した実績 = 0
 let reward = 0
