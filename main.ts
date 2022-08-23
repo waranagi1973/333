@@ -5,6 +5,7 @@ input.onGesture(Gesture.Shake, function () {
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 	
 })
+let 獲得した実績 = 0
 let reward = 0
 let reward_points = 0
 let 歩数計2 = 0
@@ -46,19 +47,25 @@ basic.forever(function () {
         reward = 0
     } else if (reward_points == 1) {
         reward += 1
-        basic.showString("  Achievements Earned Get fit on your first run")
-        reward += 1
-        basic.showString("  Achievement earned Run every day from today")
-        reward += 1
-        basic.showString("  Earned achievements Starting today, start a healthy life with running")
+        basic.showString("  Earned 3 achievements")
+        獲得した実績 += 3
         datalogger.setColumnTitles("実績:今日からランニングで健康な毎日を")
         datalogger.log(datalogger.createCV("実績:今日からランニングで健康な毎日を", 1))
         datalogger.setColumnTitles("実績:初めてのランニングで健康に")
         datalogger.log(datalogger.createCV("実績:初めてのランニングで健康に", 1))
         datalogger.setColumnTitles("実績:今日から毎日ランニング")
         datalogger.log(datalogger.createCV("実績:今日から毎日ランニング", 1))
-    } else if (reward_points == 1) {
-        reward += 1
+    } else if (reward_points > 3) {
+        if (reward_points > 20) {
+            reward += 1
+            basic.showString("Achievement earned Acquired achievement 50 steps 100 steps")
+            datalogger.setColumnTitles("実績:50歩100歩")
+            datalogger.log(datalogger.createCV("実績:50歩100歩", 1))
+        }
+    } else if (input.pinIsPressed(TouchPin.P1)) {
+        while (!(input.pinIsPressed(TouchPin.P2))) {
+        	
+        }
     } else {
         led.plotBarGraph(
         input.soundLevel(),
