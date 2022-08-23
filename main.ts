@@ -2,6 +2,9 @@ input.onGesture(Gesture.Shake, function () {
     歩数計 += 1
     歩数計2 += 1
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+	
+})
 let reward = 0
 let reward_points = 0
 let 歩数計2 = 0
@@ -44,7 +47,9 @@ basic.forever(function () {
     } else if (reward_points == 1) {
         reward += 1
         basic.showString("  Achievements Earned Get fit on your first run")
+        reward += 1
         basic.showString("  Achievement earned Run every day from today")
+        reward += 1
         basic.showString("  Earned achievements Starting today, start a healthy life with running")
         datalogger.setColumnTitles("実績:今日からランニングで健康な毎日を")
         datalogger.log(datalogger.createCV("実績:今日からランニングで健康な毎日を", 1))
@@ -52,6 +57,8 @@ basic.forever(function () {
         datalogger.log(datalogger.createCV("実績:初めてのランニングで健康に", 1))
         datalogger.setColumnTitles("実績:今日から毎日ランニング")
         datalogger.log(datalogger.createCV("実績:今日から毎日ランニング", 1))
+    } else if (reward_points == 1) {
+        reward += 1
     } else {
         led.plotBarGraph(
         input.soundLevel(),
