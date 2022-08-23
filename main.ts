@@ -1,6 +1,3 @@
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-	
-})
 input.onGesture(Gesture.FreeFall, function () {
     歩数計 += 1
     歩数計2 += 1
@@ -11,6 +8,7 @@ let reward_points = 0
 let 歩数計2 = 0
 let 歩数計 = 0
 music.setBuiltInSpeakerEnabled(true)
+basic.showString("Welcome")
 basic.forever(function () {
     music.setTempo(input.soundLevel())
     music.ringTone(input.soundLevel())
@@ -62,17 +60,10 @@ basic.forever(function () {
             datalogger.setColumnTitles("実績:50歩100歩")
             datalogger.log(datalogger.createCV("実績:50歩100歩", 1))
         }
-    } else if (input.pinIsPressed(TouchPin.P1)) {
-        while (!(input.pinIsPressed(TouchPin.P2))) {
-        	
-        }
     } else {
         led.plotBarGraph(
         input.soundLevel(),
         255
         )
     }
-})
-basic.forever(function () {
-	
 })
